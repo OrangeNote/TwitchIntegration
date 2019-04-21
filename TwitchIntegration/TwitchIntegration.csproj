@@ -20,7 +20,7 @@
       <HintPath>..\libs\KdTreeLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
-      <HintPath>..\..\TwitchConnector\packages\Microsoft.Extensions.Logging.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <HintPath>..\libs\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="MMHOOK_Assembly-CSharp">
       <HintPath>..\libs\MMHOOK_Assembly-CSharp.dll</HintPath>
@@ -33,6 +33,9 @@
     </Reference>
     <Reference Include="MonoMod.Utils">
       <HintPath>..\libs\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="pb_Stl">
       <HintPath>..\libs\pb_Stl.dll</HintPath>
@@ -62,43 +65,43 @@
       <HintPath>..\libs\TextMeshPro-1.0.55.2017.1.0b11.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api.Core">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.Core.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.Core.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api.Core.Enums">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.Core.Enums.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.Core.Enums.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api.Core.Interfaces">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.Core.Interfaces.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.Core.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api.Core.Models">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.Core.Models.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.Core.Models.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api.Helix">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.Helix.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.Helix.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api.Helix.Models">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.Helix.Models.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.Helix.Models.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api.V5">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.V5.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.V5.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Api.V5.Models">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Api.V5.Models.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Api.V5.Models.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Client">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Client.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Client.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Client.Enums">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Client.Enums.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Client.Enums.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Client.Models">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Client.Models.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Client.Models.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.Communication">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\TwitchLib.Communication.dll</HintPath>
+      <HintPath>..\libs\TwitchLib.Communication.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>..\libs\Unity.Postprocessing.Runtime.dll</HintPath>
