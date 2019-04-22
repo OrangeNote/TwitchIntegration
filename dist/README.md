@@ -20,4 +20,4 @@ If you authorize the application, the game will automatically get the token and 
 
 ## Dev
 
-Classes are in a rough state at the moment, but I hope you can figure out what you can do with this mod. As an example, I made a plugin that extends this mod (https://thunderstore.io/package/OrangeNote/TwitchVotesItems/) and integrates the chat interaction with in game elements. There's plenty of possibilites and I hope new or existing mods integrate with Twitch in the future!
+Classes are in a rough state at the moment, but I hope you can figure out what you can do with this mod. As an example, I made a plugin that extends this mod ([TwitchVotesItems](https://thunderstore.io/package/OrangeNote/TwitchVotesItems/)) and integrates the chat interaction with in game elements. There's plenty of possibilites and I hope new or existing mods integrate with Twitch in the future!
