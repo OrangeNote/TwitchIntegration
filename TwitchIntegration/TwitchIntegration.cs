@@ -15,7 +15,7 @@ using static TwitchIntegration.Connection;
 namespace TwitchIntegration
 {
     [BepInDependency("com.bepis.r2api")]
-    [BepInPlugin("dev.orangenote.twitchintegration", "TwitchIntegration", "1.0.0")]
+    [BepInPlugin("dev.orangenote.twitchintegration", "TwitchIntegration", "1.1.0")]
     public class TwitchIntegration : BaseUnityPlugin
     {
         private static ConfigWrapper<bool> DisplayTwitchMessages { get; set; }
