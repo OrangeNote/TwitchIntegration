@@ -1,7 +1,9 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using RoR2;
 using System;
 using System.Globalization;
+using TwitchIntegration.Utils;
 using TwitchLib.Api;
 using TwitchLib.Api.V5.Models.Users;
 using TwitchLib.Client;
@@ -16,43 +18,51 @@ namespace TwitchIntegration
     [BepInPlugin("dev.orangenote.twitchintegration", "TwitchIntegration", "1.0.0")]
     public class TwitchIntegration : BaseUnityPlugin
     {
-        public static ChatUtil chatUtil = new ChatUtil();
+        private static ConfigWrapper<bool> DisplayTwitchMessages { get; set; }
 
         private const string clientId = "vs0c496xny7uunkz41p8dvci1yf21e";
-
-        private Connection twitchConnection;
 
         private string accessToken;
         private string refreshToken;
         private static TwitchAPI api = new TwitchAPI();
         public static TwitchClient client = new TwitchClient();
+        private static Connection twitchConnection = new Connection();
         private static string username;
         private static string channelName;
 
         public void Awake()
         {
-            chatUtil.AddChatCommand("twitch_connect", OnTwitchConnectCommand);
-            chatUtil.AddChatCommand("tconnect", OnTwitchConnectCommand);
+            DisplayTwitchMessages = Config.Wrap(
+                "Game",
+                "DisplayTwitchMessages",
+                "Enable or disable Twitch chat messages inside the game chat. Default is false (highly recommended, input is not sanitized).",
+                false
+            );
 
-            twitchConnection = new Connection();
+            On.RoR2.Console.Awake += (orig, self) =>
+            {
+                CommandHelper.RegisterCommands(self);
+                orig(self);
+            };
+
             twitchConnection.AuthorizeEventHandler += OnAuthorized;
         }
 
-        private bool OnTwitchConnectCommand(string username, string[] args)
+        [ConCommand(commandName = "twitch_connect", flags = ConVarFlags.None, helpText = "Connect to Twitch. Usage: twitch_connect [channel]")]
+        [ConCommand(commandName = "tconnect", flags = ConVarFlags.None, helpText = "Alias for twitch_connect command. Usage: tconnect [channel]")]
+        private static void OnTwitchConnectCommand(ConCommandArgs args)
         {
-            chatUtil.SendChat("[<color=#6441a5>Twitch</color>] You will be redirected in a moment, please wait.");
+            Debug.Log("You will be redirected in a moment, please wait.");
 
             try
             {
                 twitchConnection.Connect();
-                channelName = args.Length > 1 ? args[1] : null;
+                channelName = args.Count > 0 ? args[0] : null;
             }
             catch (Exception ex)
             {
                 Debug.Log(ex.StackTrace);
             }
-
-            return true;
         }
 
         private async void OnAuthorized(object sender, AuthorizedEventArgs e)
@@ -81,7 +91,7 @@ namespace TwitchIntegration
             client.Initialize(credentials, channelName ?? username);
 
             client.OnMessageReceived += OnMessageReceived;
-            client.OnConnected += (_, __) => chatUtil.SendChat($"[<color=#6441a5>Twitch</color>] Connected to {channelName ?? username} as {username}");
+            client.OnConnected += (_, __) => Chat.AddMessage($"[<color=#6441a5>Twitch</color>] Connected to {channelName ?? username}'s channel as {username}");
 
             client.Connect();
 
@@ -109,6 +119,8 @@ namespace TwitchIntegration
 
         private void OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
+            if (!DisplayTwitchMessages.Value) return;
+
             string color = e.ChatMessage.ColorHex.IsNullOrWhiteSpace() ? "#e5eefc" : e.ChatMessage.ColorHex;
 
             var name = e.ChatMessage.DisplayName;

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -311,5 +311,9 @@
       <HintPath>..\libs\Zio.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo F|xcopy $(TargetPath) &quot;$(SolutionDir)docs\TwitchIntegration\$(TargetFileName)&quot; /Y" />
+  </Target>
 
 </Project>

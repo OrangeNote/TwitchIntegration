@@ -46,10 +46,6 @@ namespace TwitchIntegration
                 {
                     statusData = JsonUtility.FromJson<StatusData>(statusWebRequest.downloadHandler.text);
 
-                    Debug.Log("sid: " + statusData.sid);
-                    Debug.Log("isRunning: " + isRunning);
-                    Debug.Log("accessToken: " + statusData.access_token);
-
                     if (!isRunning)
                     {
                         isRunning = true;

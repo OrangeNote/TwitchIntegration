@@ -10,7 +10,9 @@ Experimental framework for integrating Twitch in the game.
 
 ## How to use
 
-Open the game chat and type `/twitch_connect [channel]`. You can use `tconnect` as alias for the command.
+Open the game **console** and type `twitch_connect [channel]`. You can use `tconnect` as alias for the command.
+
+If you want to send commands via game chat please use [ChatCommands](https://thunderstore.io/package/vis-eyth/ChatCommands/).
 
 If you don't specify the channel it will connect to the same channel associated to the account you will connect with. Otherwise authorized account and channel will be different (imagine you want to authorize a custom bot while interacting with your own chat channel).
 
